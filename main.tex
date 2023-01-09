@@ -1,0 +1,55 @@
+\documentclass[11pt]{diazessay} % Font size (can be 10pt, 11pt or 12pt)
+
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\title{\textbf{La fibración de Hopf} \\ {\Large\itshape vista desde la geometría diferencial}} % Title and subtitle
+
+\author{\textbf{David Lozano Campillo} \\ \textit{Universidad de Murcia}} % Author and institution
+
+\date{\today} % Date, use \date{} for no date
+
+\DeclareMathOperator{\R}{\mathbb{R}}
+
+
+\begin{document}
+
+\maketitle % Print the title section
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
+
+\begin{abstract}
+
+\end{abstract}
+
+\hspace*{3.6mm}\textit{Keywords:} lorem, ipsum, dolor, sit amet, lectus % Keywords
+
+\vspace{30pt} 
+
+
+\section*{Introducción}
+
+La fibración de Hopf es una poderosa herramienta para poder visualizar la 3-esfera $S^3$, una superficie de 3 dimensiones en $\R^4$, como fibras de la 2-esfera. Para poder describirla de forma adecuada, debemos introducir el concepto de cuaterniones. El concepto de cuaternión fue descubierto por William Rowan Hamilton cuando buscaba una manera sencilla de descibir rotaciones en $\R^3$ al igual que los números complejos describen fácilmente una rotación en el plano $\R^2$ mediante la multiplicación.
+
+Definimos los cuaterniones $\mathbb{H}$ como el conjunto de puntos de la forma $a+bi+cj+dk$, donde $ij=jk=ki=1$ y $ji=kj=ik=-1$, con el p. Dado un cuaternión $r=a+bi+cj+dk$, definimos su conjugado como $\bar{r}=a-bi-cj-dk$, y la norma como $|r|^2 = r\bar(r) = a^2+b^2+c^2+d^2$. Tenemos por lo tanto que el inverso de un cuaternón $r$ viene dado por $r^{-1}=\frac{\bar{r}}{|r|^2}$.
+
+Un cuaternión $r$ define una aplicación $R_r:\R^3\to\R^3$ de la siguiente manera: identificando $\R^3$ como el conjunto de cuaterniones imaginarios, definimos $R_r(p) = rpr^{-1}$. Se puede comprobar que dicho producto es también un cuaternión imaginario, luego podemos identificarlo con un punto de $\R^3$
+
+Claramente la aplicación $R_r$ conserva la norma, pues $|rpr^{-1}|=|r||p||r^{-1}|=|p||r||r|^{-1}=|p|$. Además, se puede verificar que $R_{kr} = R_r$ siendo $k$ un número real, luego suponemos a partir de ahora que $r$ tiene norma 1. Es fácil comprobar que si $r=a+bi+cj+dk$, entonces $(b,c,d)$ es un autovector de $R_r$ con autovalor 1. Por lo tanto, $R$ es una rotación en el espacio euclídeo $\R^3$ y su eje viene determinado por el subespacio generado por $(b,c,d)$. El ángulo se puede calcular fácilmente tomando un vector $w$ perpendicular a $(b,c,d)$, por ejemplo $(c,-b,0)$ si al menos algún $b,c$ es distinto de cero, o $(1,0,0)$ en el otro caso. Aplicando la fórmula
+\[\cos\theta = \frac{wR_rw}{|w|^2}\]
+obtenemos que $\theta = 2\arccos(a)$.
+
+Vamos a definir un punto distinguido en la 2-esfera, $P_0=(1,0,0)=i$ en nuestra identificación. Entonces dado un punto en la 3-esfera, por la discusión anterior vemos que dicho cuaternión define una rotación $R_r$, y definimos entonces la fibración de Hopf $\pi:S^3\to S^2$ como $\pi(r)=ri\bar{r}$.
+
+T
+
+
+\bibliographystyle{unsrt}
+
+\bibliography{sample.bib}
+
+\end{document}
