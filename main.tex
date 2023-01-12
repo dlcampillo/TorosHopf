@@ -2,6 +2,15 @@
 
 \usepackage{amsmath}
 \usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{amsthm}
+
+\newtheorem{definition}{Definición}
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposición}
+
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\im}{\textrm{im}}
 
 \title{\textbf{La fibración de Hopf} \\ {\Large\itshape vista desde la geometría diferencial}} % Title and subtitle
 
@@ -9,18 +18,12 @@
 
 \date{\today} % Date, use \date{} for no date
 
-\DeclareMathOperator{\R}{\mathbb{R}}
-
-
 \begin{document}
 
 \maketitle % Print the title section
 
-%----------------------------------------------------------------------------------------
-%	ABSTRACT AND KEYWORDS
-%----------------------------------------------------------------------------------------
-
-%\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
+\begin{center}\includegraphics[width=8cm]{Figures/tsai.jpeg}\end{center}
+\vspace{1cm}
 
 \begin{abstract}
 
@@ -28,12 +31,12 @@
 
 \hspace*{3.6mm}\textit{Keywords:} lorem, ipsum, dolor, sit amet, lectus % Keywords
 
-\vspace{30pt} 
+\vspace{30pt}
 
 
 \section*{Introducción}
 
-La fibración de Hopf es una poderosa herramienta para poder visualizar la 3-esfera $S^3$, una superficie de 3 dimensiones en $\R^4$, como fibras de la 2-esfera. Para poder describirla de forma adecuada, debemos introducir el concepto de cuaterniones. El concepto de cuaternión fue descubierto por William Rowan Hamilton cuando buscaba una manera sencilla de descibir rotaciones en $\R^3$ al igual que los números complejos describen fácilmente una rotación en el plano $\R^2$ mediante la multiplicación.
+La fibración de Hopf es una poderosa herramienta para poder visualizar la 3-esfera $S^3$, una superficie de 3 dimensiones en $\R^4$, como fibras de la 2-esfera. Para poder describirla de forma adecuada, debemos introducir el concepto de cuaterniones. El concepto de cuaternión fue descubierto por William Rowan Hamilton cuando buscaba una manera sincilla de descibir rotaciones en $\R^3$ al igual que los números complejos describen fácilmente una rotación en el plano $\R^2$ mediante la multiplicación.
 
 Definimos los cuaterniones $\mathbb{H}$ como el conjunto de puntos de la forma $a+bi+cj+dk$, donde $ij=jk=ki=1$ y $ji=kj=ik=-1$, con el p. Dado un cuaternión $r=a+bi+cj+dk$, definimos su conjugado como $\bar{r}=a-bi-cj-dk$, y la norma como $|r|^2 = r\bar(r) = a^2+b^2+c^2+d^2$. Tenemos por lo tanto que el inverso de un cuaternón $r$ viene dado por $r^{-1}=\frac{\bar{r}}{|r|^2}$.
 
@@ -43,9 +46,85 @@ Claramente la aplicación $R_r$ conserva la norma, pues $|rpr^{-1}|=|r||p||r^{-1
 \[\cos\theta = \frac{wR_rw}{|w|^2}\]
 obtenemos que $\theta = 2\arccos(a)$.
 
-Vamos a definir un punto distinguido en la 2-esfera, $P_0=(1,0,0)=i$ en nuestra identificación. Entonces dado un punto en la 3-esfera, por la discusión anterior vemos que dicho cuaternión define una rotación $R_r$, y definimos entonces la fibración de Hopf $\pi:S^3\to S^2$ como $\pi(r)=ri\bar{r}$.
+Vamos a definir un punto distinguido en la 2-esfera, $P_0=(1,0,0)=i$ en nuestra identificación. Entonces dado un punto en la 3-esfera, por la discusión anterior vemos que dicho cuaternión define una rotación $R_r$, y definimos entonces la fibración de Hopf: $\pi:S^3\to S^2$ como $\pi(r)=ri\bar{r}$.
 
-T
+\begin{definition}
+    Dado $r=a+bi+cj+dk\in S^3$, definimos la fibración de Hopf como la aplicación $\pi:S^3\to S^2$
+    \[\pi(r)=ri\bar{r}=(a^2+b^2-c^2-d^2)i+2(ad-bc)j+2(bd-ac)k\]
+\end{definition}
+
+Calculemos la fibra del punto $(1,0,0)=i$:
+
+\begin{proposition}
+    $\pi^{-1}(i)=\{\cos\theta+i\sin\theta\}_{0\leq\theta\leq 2\pi}$
+\end{proposition}
+\begin{proof}
+    Suponemos que $r=a+bi+cj+dk\in S^3$ tal que $\pi(r)=i$. Tenemos entonces que $a^2+b^2+c^2+d^2=1$, $a^2+b^2-c^2-d^2=1$. Restando la segunda a la primera obtenemos que $c^2+d^2=0$, luego $c=d=0$. Tenemos por lo tanto $a^2+b^2=1$, lo que implica el resultado que queremos demostrar.
+\end{proof}
+
+Tenemos por lo tanto que para un punto $p$, la fibra $\pi^{-1}(p)$ consiste en el conjunto de rotaciones que llevan $p$ a $i$. Dados dos puntos en $S^2$, el eje de una rotación que lleva un punto a otro está en el gran círculo que bisecta el arco entre ambos puntos. Por lo tanto, dada una rotación que lleva $p$ a $i$ por el cuaternión $r_0$, el conjunto de rotaciones que llevan $p$ a $i$ viene dado por el conjunto
+\[\pi^{-1}(p) = \{r_0e^{i\theta}\}_{0\leq\theta\leq 2\pi}.\]
+
+También podemos observar esto viendo que si $s$ es un elemento de la fibra, entonces $sis^-1=p=r_0i\overline{r_0}$, luego $(s^-1r_0)i\overline{(\overline{s}r_0)}=i$, es decir, $\overline{s}r_0$ está en la fibra de $i$. Claramente $\pi^{-1}(i)=\{\cos\theta+i\sin\theta\}_{0\leq\theta 2\pi}$, y por lo tanto $s=r(\cos\theta+i\sin\theta)$.
+Hemos visto que las fibras de la aplicación de Hopf son circunferencias, y además, tenemos claramente que $\pi(S^3)=S^2$.
+
+\begin{center}
+    \includegraphics[width=4cm]{Figures/bisectriz.png}
+\end{center}
+
+\section*{Visualizando la fibración de Hopf}
+
+Sabemos que las fibras de la fibración de Hopf son circunferencias, pero, ¿cómo las visualizamos al estar dentro de un espacio 4-dimensional? Usamos la herramienta más socorrida al estudiar las esferas, y conocida por cualquier matemático, sea geómetra o no: la proyección estereográfica. Esta proyección (en $S^2$) hace corresponder a un punto de la esfera (a excepción de un punto distinguido, que en nuestro caso será el ``polo norte'', $(0,0,1)$) el punto de intersección de la recta que pasa por el polo y por el plano generado por $(1,0,0)$ y $(0,1,0$).
+
+Una propiedad muy importante de la proyección estereográfica es que lleva circunferencias (que no pasan por el polo norte) a circunferencias en el plano. Si una circunferencia pasa por el polo norte, es proyectada a una recta. En el caso de la $S^3$, vamos a tomar como polo norte el punto $(1,0,0,0)$. Sabemos por la sección anterior que las fibras de $\pi$ son circunferencias, luego son proyectadas a circunferencias, a excepción de si pasan por el polo norte, que son poryectadas en recta. Denotemos $s$ por dicha proyección estereográfica. Entonces es claro lo siguiente:
+
+\begin{itemize}
+    \item $s\circ\pi^{-1}((1,0,0))$ es el eje $x$, ya que el punto $(1,0,0,0)$ (la rotación identidad) se encuentra en la fibra, y por tanto $s$ proyecta dicha circunferencia al eje $x$.
+    \item $s\circ\pi^{-1}((-1,0,0))$ es el circulo unidad en el plano $y,z$. Esto se debe a que $\pi^{-1}((-1,0,0))=\{ke^{i\theta}\}_{0\leq\theta\leq 2\pi}=\{j\sin \theta + k\cos \theta\}_{0\leq\theta\leq 2\pi}$
+    \item Para cualquier otro punto $P$ distinto, $s\circ\pi^{-1}(P)$ es una circunferencia que interseca el plano $y,z$ en dos puntos, uno fuera y otro dentro del círculo unidad. Esto se puede comprobar viendo que si $P=(p_1,p_2,p_3)$ es dicho punto, entonces $r_1=\sqrt{\frac{1+p_1}{2}}(1-p_3j+p_2k)$ es un cuaternión que describe una rotación que lleva $P$ a $i$. Por lo tanto, la fibra viene dada por $r_1e^{i\theta}$. Poniendo $r_1=a+bj+ck$ para simplificar los cálculos, podemos expresar la fibra como
+          \[a\cos\theta + a\sin\theta i + (b\cos\theta + c\sin\theta)j + (c\cos\theta -b\sin\theta)k.\]
+          Usando ahora la descipción de la proyección estereográfica como \[(w,x,y,z)\mapsto\left(\frac{x}{1-w},\frac{y}{1-w},\frac{z}{1-w}\right)\]
+          tenemos que dicha proyección viene dada por
+          \[\left(\frac{a\sin\theta}{1-a\cos\theta},\frac{b\cos\theta+c\sin\theta}{1-a\cos\theta},\frac{c\cos\theta-b\sin\theta}{1-a\cos\theta}\right).\]
+          Esta proyección interseca al plano $y,z$ en dos puntos, cuando $\theta=0,\pi$, y por tanto los dos puntos son $(0,\frac{b}{1-a},\frac{c}{1-a})$ y $(0,\frac{-b}{1+a},\frac{-c}{1+a})$. Se puede comprobar fácilmente que uno de ellos tiene norma menor que 1 y otro normal mayor que 1, sustituyendo $a,b,c$ por sus valores correspondientes y que $(p_1,p_2,p_3)$ tiene norma 1. Por lo tanto, $s\circ\pi^{-1}(P)$ está enlazado con el círculo unidad en el plano $y,z$. Además, el eje $x$ pasa por el interior de este círculo, ya que el plano de $s\circ\pi^{-1}(P)$ no puede contenerlo (si no, las dos fibras se intersecarían y sabemos que son disjuntas.)
+\end{itemize}
+
+\section*{Sumersiones riemannianas}
+
+Viendo la fibración de Hopf desde el punto de vista de la geometría de variedades de Riemann, es fácil comprobar que es una sumersión. Recordemos la definición de sumersión: $\pi:M\to N$ es una sumersión diferenciable si es una aplicación diferenciable entre las variedades $M$ y $N$ y además su diferencial es sobreyectiva en todo punto, es decir, tiene rango máximo. Haciendo las cuentas con cuaterniones, podemos ver que la fibración de Hopf tiene la siguiente forma:
+\[\pi(w,x,y,z) = (w^2 + x^2 - y^2 - z^2, 2(wz + xy), 2(xz - wy))\]
+
+Si consideramos la aplicación como una aplicación $H:\R^4\to \R^3$, y calculamos el jacobiano de dicha aplicación para un $p=(w,x,y,z)$:
+\[
+    dH_{p}=\begin{pmatrix}
+        2w  & 2x & -2y & -2z \\
+        2z  & 2y & 2x  & 2w  \\
+        -2y & 2z & -2w & 2x
+    \end{pmatrix}
+\]
+
+Tenemos que es claramente de rango 2, ya que el valor absoluto del menor formado con las tres primeras columnas vale $|8y|$, el formado con las tres últimas vale $|8x|$, el formado con la primera, cuarta y tercera vale $|8w|$ y el formado con la cuarta, primera y segunda vale $|8z|$. Como restringimos la aplicación a la $S^3$, ninguno de los valores se anula simultáneamente y por lo tanto $dH_p$ tiene rango 3 para todo punto $p\in S^3$.
+
+Usaremos ahora el siguiente lema:
+
+\begin{lemma}
+    Sea $U\subseteq \R^{n+1}$ un subespacio $n$-dimensional, y $T:\R^{n+1}\to\R^n$ una aplicación lineal con rango máximo. Si $V\subseteq \R^n$ es un subespacio $n-1$-dimensional que contiene a $T(U)$, la restricción $T|_U:U\to V$ tiene rango $n-1$.
+\end{lemma}
+\begin{proof}
+    Usamos el teorema del rango-nulidad en $T$ y en $T|_U$, teniendo que
+    \begin{align*}
+        \dim(\ker T)   & = \dim(\R^{n+1}) - \dim(\im T) \\
+        \dim(\im T|_U) & = \dim(U) - \dim(\ker T|_U)
+    \end{align*}
+
+    Si $\dim(\im T)=n$, entonces $\dim(\ker T)=1$. Como $\ker T|_U\subseteq \ker T$, tenemos que $\dim(\ker T|_U)\leq \dim(\ker T)=1$. Por lo tanto, tenemos que $\dim(U)-\dim(\ker T|_U) \geq n-1$, y por lo tanto $\dim(\im T|_U)\geq n-1$. Como $\im T|_U\subset V$ y $\dim V = n-1$, tenemos que $\dim(T_U)\leq n-1$. Por lo tanto, tenemos que $\dim(T|_U)=n-1$.
+\end{proof}
+
+Como $S^3$ es una subvariedad de $R^4$, la restricción de la aplicación $H:\R^4\to \R^3$ (que es diferenciable), que es la composición con la inclusión $S^3\hookrightarrow\R^4$ es diferenciable. Además, como $\im(\pi|_{S^3})=\im\pi\subseteq S^2$, tenemos que la restricción de $H|_{S^3}$ al codominio es diferenciable \cite[Corolario 1.29]{Oneill_1983}
+
+
+
+
 
 
 \bibliographystyle{unsrt}
