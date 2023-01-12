@@ -1,3 +1,24 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{adams}
+J.~F. Adams.
+\newblock On the non-existence of elements of hopf invariant one.
+\newblock {\em Annals of Mathematics}, 72(1):20--104, 1960.
+
+\bibitem{Lee_2003}
+John~M. Lee.
+\newblock {\em Introduction to Smooth Manifolds}, volume 218 of {\em Graduate
+  Texts in Mathematics}.
+\newblock Springer New York, New York, NY, 2003.
+
+\bibitem{oneill_1966}
+Barrett O'Neill.
+\newblock The fundamental equations of a submersion.
+\newblock {\em Michigan Mathematical Journal}, 13(4), Dec 1966.
+
+\bibitem{Oneill_1983}
+Barrett O'Neill.
+\newblock {\em Semi-Riemannian Geometry with Applications to Relativity}.
+\newblock Elsevier, Burlington, 1983.
 
 \end{thebibliography}

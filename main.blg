@@ -1,48 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-The style file: unsrt.bst
-I found no \citation commands---while reading file main.aux
+The style file: plain.bst
 Database file #1: sample.bib
-You've used 0 entries,
-            1791 wiz_defined-function locations,
-            445 strings with 3516 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            526 strings with 4427 characters,
+and the built_in function-call counts, 981 in all, are:
+= -- 93
+> -- 28
+< -- 1
++ -- 13
+- -- 8
+* -- 62
+:= -- 176
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 14
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 4
+duplicate$ -- 46
+empty$ -- 90
+format.name$ -- 8
+if$ -- 200
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 4
+missing$ -- 6
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 17
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 12
 quote$ -- 0
-skip$ -- 1
+skip$ -- 27
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 43
+swap$ -- 6
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 12
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 10
+width$ -- 5
+write$ -- 47
